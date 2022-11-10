@@ -21,7 +21,10 @@ public class Player : MonoBehaviour
     public int EarthNumber { get { return earthNumber; } }
 
     [Header("UI Elements")]
-    public TextMeshProUGUI waterText, airText, fireText, earthText;
+    public TextMeshProUGUI waterText;
+    public TextMeshProUGUI airText; 
+    public TextMeshProUGUI fireText;
+    public TextMeshProUGUI earthText;
 
     private void Awake()
     {

@@ -47,9 +47,9 @@ public class Card : MonoBehaviour
         }
     }
 
-    void MoveToDiscardPile()
+    /*public void MoveToDiscardPile()
     {
         manager.discarded.Add(this);
         gameObject.SetActive(false);
-    }
+    }*/
 }

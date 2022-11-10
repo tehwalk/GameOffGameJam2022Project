@@ -8,10 +8,14 @@ public class AbilityButton : MonoBehaviour
     Button myButton;
     public Ability myAbility;
     Player player;
+    BattleManager battleManager;
+    CardManager cardManager;
     // Start is called before the first frame update
     void Start()
     {
         player = Player.Instance;
+        battleManager = BattleManager.Instance;
+        cardManager = CardManager.Instance;
         myButton = GetComponent<Button>();
         myButton.onClick.AddListener(delegate { UseAbility(); });
         DecorateButton();
@@ -54,5 +58,7 @@ public class AbilityButton : MonoBehaviour
     void UseAbility()
     {
         Debug.Log(myAbility.attackPoints + " in damage!");
+        battleManager.PlayerAttack(myAbility.attackPoints);
+        cardManager.DiscardSelectedCards();
     }
 }

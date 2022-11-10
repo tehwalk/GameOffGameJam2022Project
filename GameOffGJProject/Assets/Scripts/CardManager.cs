@@ -86,4 +86,13 @@ public class CardManager : MonoBehaviour
             discarded.Clear();
         }
     }
+
+    public void DiscardSelectedCards()
+    {
+        foreach(Card c in selectedCards)
+        {
+            discarded.Add(c);
+            c.gameObject.SetActive(false);
+        }
+    }
 }
