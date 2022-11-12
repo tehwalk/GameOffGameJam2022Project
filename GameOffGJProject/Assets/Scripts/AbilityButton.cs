@@ -57,8 +57,15 @@ public class AbilityButton : MonoBehaviour
 
     void UseAbility()
     {
+        AttackElement myAttack;
+        myAttack.attackName = myAbility.abilityName;
+        myAttack.attackDamage = myAbility.attackPoints;
         Debug.Log(myAbility.attackPoints + " in damage!");
-        battleManager.PlayerAttack(myAbility.attackPoints);
+        battleManager.PlayerAttack(myAttack);
+        player.AirNumber -= myAbility.airCost;
+        player.EarthNumber -= myAbility.earthCost;
+        player.FireNumber -= myAbility.fireCost;
+        player.WaterNumber -= myAbility.waterCost;
         cardManager.DiscardSelectedCards();
     }
 }

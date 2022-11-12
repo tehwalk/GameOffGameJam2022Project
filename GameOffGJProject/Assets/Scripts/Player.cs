@@ -15,10 +15,10 @@ public class Player : MonoBehaviour
     }
     private CardManager cardManager;
     private int waterNumber, airNumber, fireNumber, earthNumber;
-    public int WaterNumber { get { return waterNumber; } }
-    public int AirNumber { get { return airNumber; } }
-    public int FireNumber { get { return fireNumber; } }
-    public int EarthNumber { get { return earthNumber; } }
+    public int WaterNumber { get { return waterNumber; } set {waterNumber = value;}}
+    public int AirNumber { get { return airNumber; } set {airNumber = value;}}
+    public int FireNumber { get { return fireNumber; } set {fireNumber = value;}}
+    public int EarthNumber { get { return earthNumber; } set {earthNumber = value;}}
 
     [Header("UI Elements")]
     public TextMeshProUGUI waterText;

@@ -14,8 +14,9 @@ public class BattleManager : MonoBehaviour
     }
     BattleState state;
     public Unit playerUnit, enemyUnit;
+    EnemyBehaviour enemyBehaviour;
     public GameObject playerAttackPanel;
-    public Button drawButton;
+    //public Button drawButton, passButton;
     public TextMeshProUGUI dialogueText;
     [SerializeField] private float intervalTime;
     [SerializeField] private int enemyAttackPoints;
@@ -27,8 +28,9 @@ public class BattleManager : MonoBehaviour
     }
     void Start()
     {
+        enemyBehaviour = enemyUnit.GetComponent<EnemyBehaviour>();
         state = BattleState.Start;
-        drawButton.interactable = false;
+        //drawButton.interactable = false;
         playerAttackPanel.SetActive(false);
         //StartCoroutine(BeginBattle());
         StartCoroutine(TransitionToState(BattleState.PlayerTurn, "A wild " + enemyUnit.unitName + " has appeared!!"));
@@ -45,22 +47,22 @@ public class BattleManager : MonoBehaviour
         switch (state)
         {
             case BattleState.PlayerTurn:
-                drawButton.interactable = true;
+                //drawButton.interactable = true;
                 playerAttackPanel.SetActive(true);
                 break;
             case BattleState.EnemyTurn:
-                drawButton.interactable = false;
+                //drawButton.interactable = false;
                 playerAttackPanel.SetActive(false);
                 //EnemyAttack(enemyAttackPoints);
                 break;
             case BattleState.Won:
-                drawButton.interactable = false;
+                //drawButton.interactable = false;
                 playerAttackPanel.SetActive(false);
                 //Debug.Log("Player won!!");
                 dialogueText.text = "You won!!!";
                 break;
             case BattleState.Lost:
-                drawButton.interactable = false;
+                //drawButton.interactable = false;
                 playerAttackPanel.SetActive(false);
                 //Debug.Log("Player Lost!!");
                 dialogueText.text = "You lost!!!";
@@ -70,9 +72,14 @@ public class BattleManager : MonoBehaviour
         }
     }
 
-    public void PlayerAttack(int damage)
+    public void PlayerPass()
     {
-        bool ded = enemyUnit.IsDead(damage);
+        StartCoroutine(TransitionToState(BattleState.EnemyTurn, "You passed your turn!"));
+    }
+
+    public void PlayerAttack(AttackElement attack)
+    {
+        bool ded = enemyUnit.IsDead(attack.attackDamage);
         if (ded == true)
         {
             state = BattleState.Won;
@@ -80,21 +87,21 @@ public class BattleManager : MonoBehaviour
         else
         {
             //state = BattleState.EnemyTurn;
-            StartCoroutine(TransitionToState(BattleState.EnemyTurn, "You attacked " + enemyUnit.unitName + " with " + damage.ToString() + " points of damage!"));
+            StartCoroutine(TransitionToState(BattleState.EnemyTurn, "You attacked " + enemyUnit.unitName + " with " + attack.attackName));
             //EnemyAttack(enemyAttackPoints);
         }
     }
 
-    public void EnemyAttack(int damage)
+    public void EnemyAttack(AttackElement attack)
     {
-        bool ded = playerUnit.IsDead(damage);
+        bool ded = playerUnit.IsDead(attack.attackDamage);
         if (ded == true)
         {
             state = BattleState.Lost;
         }
         else
         {
-            StartCoroutine(TransitionToState(BattleState.PlayerTurn, enemyUnit.unitName + " has attacked you with " + damage.ToString() + " points of damage!"));
+            StartCoroutine(TransitionToState(BattleState.PlayerTurn, enemyUnit.unitName + " has attacked you with " + attack.attackName));
         }
     }
 
@@ -104,11 +111,11 @@ public class BattleManager : MonoBehaviour
         yield return new WaitForSeconds(intervalTime);
         state = desiredState;
         //testing purposes will probably change in the future
-        if(desiredState == BattleState.EnemyTurn)
+        if (desiredState == BattleState.EnemyTurn)
         {
-            EnemyAttack(enemyAttackPoints);
+            EnemyAttack(enemyBehaviour.EnemyRandomAttack());
         }
-        else if(desiredState == BattleState.PlayerTurn)
+        else if (desiredState == BattleState.PlayerTurn)
         {
             dialogueText.text = "Pick your attack";
         }
