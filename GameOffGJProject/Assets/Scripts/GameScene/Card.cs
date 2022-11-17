@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
 using TMPro;
 
-public class Card : MonoBehaviour
+public class Card : MonoBehaviour, IPointerClickHandler
 {
     [HideInInspector] public bool hasBeenPlayed;
     private bool hasBeenPlaced = false;
@@ -21,17 +23,35 @@ public class Card : MonoBehaviour
 
     void SetCardAppearance()
     {
-        transform.GetChild(6).GetComponent<SpriteRenderer>().sprite = myCardFace.detail1;
-        transform.GetChild(8).GetComponent<SpriteRenderer>().sprite = myCardFace.cardFace;
-        cardTitle = transform.GetChild(transform.childCount - 1).GetChild(0).GetComponent<TextMeshProUGUI>();
-        cardDescription = transform.GetChild(transform.childCount - 1).GetChild(1).GetComponent<TextMeshProUGUI>();
+        transform.GetChild(4).GetComponent<Image>().sprite = myCardFace.detail1;
+        transform.GetChild(5).GetComponent<Image>().sprite = myCardFace.cardFace;
+        cardTitle = transform.GetChild(6).GetComponent<TextMeshProUGUI>();
+        cardDescription = transform.GetChild(7).GetComponent<TextMeshProUGUI>();
         cardTitle.text = myCardFace.cardName;
         cardDescription.text = myCardFace.cardDescription;
 
     }
 
-    private void OnMouseDown()
+   /* private void OnMouseDown()
     {
+        hasBeenPlaced = !hasBeenPlaced;
+        if (hasBeenPlaced == true)
+        {
+            transform.position += Vector3.up * manager.playDisplacementDistance;
+            manager.selectedCards.Add(this);
+            player.AddElementsFromCard(this);
+        }
+        else
+        {
+            transform.position -= Vector3.up * manager.playDisplacementDistance;
+            manager.selectedCards.Remove(this);
+            player.RemoveElementsFromCard(this);
+        }
+    }*/
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        //throw new System.NotImplementedException();
         hasBeenPlaced = !hasBeenPlaced;
         if (hasBeenPlaced == true)
         {
@@ -47,9 +67,4 @@ public class Card : MonoBehaviour
         }
     }
 
-    /*public void MoveToDiscardPile()
-    {
-        manager.discarded.Add(this);
-        gameObject.SetActive(false);
-    }*/
 }

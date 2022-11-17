@@ -8,23 +8,36 @@ public class EnemyBehaviour : MonoBehaviour
     Unit myUnit;
     Enemy myEnemyElements;
     EnemyPass enemyPass;
+    [SerializeField] Enemy placeholderEnemy;
     // Start is called before the first frame update
     void Awake()
     {
         myUnit = GetComponent<Unit>();
-        enemyPass = GameObject.FindGameObjectWithTag("EnemyPass").GetComponent<EnemyPass>();
-        myEnemyElements = enemyPass.GetSelectedEnemy();
-       // battleManager = BattleManager.Instance;
+        SelectEnemy();
+        // battleManager = BattleManager.Instance;
         myUnit.unitName = myEnemyElements.enemyName;
         myUnit.maxHealth = myEnemyElements.maxHealth;
     }
 
-    private void Start() {
+    void SelectEnemy()
+    {
+        if (!GameObject.FindGameObjectWithTag("EnemyPass"))
+        {
+            myEnemyElements = placeholderEnemy;
+            return;
+        }
+        enemyPass = GameObject.FindGameObjectWithTag("EnemyPass").GetComponent<EnemyPass>();
+        myEnemyElements = enemyPass.GetSelectedEnemy();
+    }
+
+    private void Start()
+    {
         GameObject enemyGFX = Instantiate(myEnemyElements.enemyGFX, transform.position, Quaternion.identity);
         enemyGFX.transform.SetParent(this.transform);
     }
 
-    public AttackElement EnemyRandomAttack(){
+    public AttackElement EnemyRandomAttack()
+    {
         AttackElement myAttack;
         Ability selectedAbility = myEnemyElements.enemyAbilities[Random.Range(0, myEnemyElements.enemyAbilities.Length)];
         myAttack.attackName = selectedAbility.abilityName;
@@ -33,5 +46,5 @@ public class EnemyBehaviour : MonoBehaviour
         return myAttack;
     }
 
-    
+
 }

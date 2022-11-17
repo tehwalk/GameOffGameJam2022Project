@@ -16,7 +16,7 @@ public class CardManager : MonoBehaviour
     public List<Card> deck = new List<Card>();
     [HideInInspector] public List<Card> discarded = new List<Card>();
     [HideInInspector] public List<Card> selectedCards = new List<Card>();
-    public Transform[] cardSlots;
+    public RectTransform[] cardSlots;
     [HideInInspector] public bool[] availableSlots;
 
     [Header("Text Properties")]
@@ -60,8 +60,10 @@ public class CardManager : MonoBehaviour
                 {
                     randCard.gameObject.SetActive(true);
                     randCard.hasBeenPlayed = false;
-                    randCard.gameObject.transform.position = cardSlots[i].position;
-                    randCard.gameObject.transform.rotation = cardSlots[i].rotation;
+                    //randCard.gameObject.transform.position = Camera.main.WorldToScreenPoint(cardSlots[i].position);
+                    randCard.transform.SetParent(cardSlots[i]);
+                    randCard.GetComponent<RectTransform>().position = cardSlots[i].position;
+                    //randCard.gameObject.transform.rotation = cardSlots[i].rotation;
                     randCard.handIndex = i;
                     availableSlots[i] = false;
                     deck.Remove(randCard);
@@ -93,7 +95,17 @@ public class CardManager : MonoBehaviour
         foreach(Card c in selectedCards)
         {
             discarded.Add(c);
+            c.transform.SetParent(null);
             c.gameObject.SetActive(false);
         }
+    }
+
+    private void OnDrawGizmos() {
+         //Gizmos.matrix = GameObject.FindObjectOfType<Canvas>().transform.localToWorldMatrix;
+         Gizmos.color = Color.cyan;
+         foreach(RectTransform r in cardSlots)
+         {
+            Gizmos.DrawSphere(r.position, 10f);
+         }
     }
 }
