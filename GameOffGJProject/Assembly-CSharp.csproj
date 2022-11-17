@@ -36,17 +36,45 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\CardFace.cs" />
-     <Compile Include="Assets\Scripts\CardManager.cs" />
-     <Compile Include="Assets\Scripts\Player.cs" />
-     <Compile Include="Assets\Scripts\Card.cs" />
-     <Compile Include="Assets\Scripts\Unit.cs" />
-     <Compile Include="Assets\Scripts\AbilityButton.cs" />
-     <Compile Include="Assets\Scripts\Ability.cs" />
+     <Compile Include="Assets\External\LeanTween\Examples\Scripts\PathSplineTrack.cs" />
+     <Compile Include="Assets\External\LeanTween\Framework\LeanTest.cs" />
+     <Compile Include="Assets\External\LeanTween\Examples\Scripts\GeneralAdvancedTechniques.cs" />
+     <Compile Include="Assets\External\LeanTween\Framework\LeanAudio.cs" />
+     <Compile Include="Assets\External\LeanTween\Framework\LTDescrOptional.cs" />
+     <Compile Include="Assets\External\LeanTween\Examples\Scripts\PathSpline.cs" />
+     <Compile Include="Assets\External\LeanTween\Framework\LeanTween.cs" />
+     <Compile Include="Assets\External\LeanTween\Examples\Archived\OldGUIExamplesCS.cs" />
+     <Compile Include="Assets\External\LeanTween\Examples\Scripts\GeneralEasingTypes.cs" />
+     <Compile Include="Assets\External\LeanTween\Examples\Scripts\GeneralSimpleUI.cs" />
+     <Compile Include="Assets\External\LeanTween\Examples\Scripts\PathSpline2d.cs" />
+     <Compile Include="Assets\External\LeanTween\Examples\Scripts\LogoCinematic.cs" />
+     <Compile Include="Assets\External\LeanTween\Examples\Scripts\GeneralCameraShake.cs" />
+     <Compile Include="Assets\External\LeanTween\Examples\Scripts\PathSplines.cs" />
+     <Compile Include="Assets\External\LeanTween\Examples\Archived\TestingRigidbodyCS.cs" />
+     <Compile Include="Assets\External\LeanTween\Examples\Scripts\GeneralBasic.cs" />
+     <Compile Include="Assets\External\LeanTween\Examples\Scripts\PathBezier2d.cs" />
+     <Compile Include="Assets\External\LeanTween\Examples\Scripts\GeneralEventsListeners.cs" />
+     <Compile Include="Assets\External\LeanTween\Examples\Scripts\Following.cs" />
+     <Compile Include="Assets\External\LeanTween\Examples\Scripts\GeneralSequencer.cs" />
+     <Compile Include="Assets\External\LeanTween\Examples\Scripts\TestingZLegacyExt.cs" />
+     <Compile Include="Assets\External\LeanTween\Framework\LeanSmooth.cs" />
+     <Compile Include="Assets\External\LeanTween\Examples\Scripts\TestingUnitTests.cs" />
+     <Compile Include="Assets\External\LeanTween\Examples\Archived\TestingPunch.cs" />
+     <Compile Include="Assets\External\LeanTween\Examples\Scripts\TestingZLegacy.cs" />
+     <Compile Include="Assets\External\LeanTween\Examples\Scripts\PathBezier.cs" />
+     <Compile Include="Assets\External\LeanTween\Framework\LTDescr.cs" />
+     <Compile Include="Assets\External\LeanTween\Framework\LTSeq.cs" />
+     <Compile Include="Assets\External\LeanTween\Examples\Scripts\PathSplinePerformance.cs" />
+     <Compile Include="Assets\External\LeanTween\Examples\Scripts\GeneralUISpace.cs" />
+     <Compile Include="Assets\External\LeanTween\Examples\Scripts\PathSplineEndless.cs" />
+     <Compile Include="Assets\External\LeanTween\Framework\LeanTweenExt.cs" />
+     <Compile Include="Assets\External\LeanTween\Examples\Scripts\GeneralBasics2d.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
+     <None Include="Assets\External\LeanTween\ReadMe.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
+     <None Include="Assets\External\LeanTween\License.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
@@ -58,6 +86,7 @@
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+     <None Include="Assets\External\LeanTween\Examples\Archived\2dUnlitWithFade.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
      <None Include="Assets\Modular Cards DEMO\Documentation.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
@@ -325,9 +354,6 @@
     </Reference>
     <Reference Include="Unity.Burst.Cecil.Rocks">
         <HintPath>E:\Unity Projects VOL 2\GameOffGameJam2022Project\GameOffGameJam2022Project\GameOffGJProject\Library\PackageCache\com.unity.burst@1.6.6\Unity.Burst.CodeGen\Unity.Burst.Cecil.Rocks.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-        <HintPath>E:\Unity Projects VOL 2\GameOffGameJam2022Project\GameOffGameJam2022Project\GameOffGJProject\Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2\Runtime\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
         <HintPath>E:\Program Files\Unity\2021.3.12f1\Editor\Data\NetStandard\ref\2.1.0\netstandard.dll</HintPath>
@@ -743,9 +769,6 @@
     <Reference Include="UnityEditor.UI">
         <HintPath>E:\Unity Projects VOL 2\GameOffGameJam2022Project\GameOffGameJam2022Project\GameOffGJProject\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.PlasticSCM.Editor">
-        <HintPath>E:\Unity Projects VOL 2\GameOffGameJam2022Project\GameOffGameJam2022Project\GameOffGJProject\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Rider.Editor">
         <HintPath>E:\Unity Projects VOL 2\GameOffGameJam2022Project\GameOffGameJam2022Project\GameOffGJProject\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
     </Reference>
@@ -755,23 +778,14 @@
     <Reference Include="UnityEngine.UI">
         <HintPath>E:\Unity Projects VOL 2\GameOffGameJam2022Project\GameOffGameJam2022Project\GameOffGJProject\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Services.Core">
-        <HintPath>E:\Unity Projects VOL 2\GameOffGameJam2022Project\GameOffGameJam2022Project\GameOffGJProject\Library\ScriptAssemblies\Unity.Services.Core.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Mathematics">
         <HintPath>E:\Unity Projects VOL 2\GameOffGameJam2022Project\GameOffGameJam2022Project\GameOffGJProject\Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.IK.Runtime">
         <HintPath>E:\Unity Projects VOL 2\GameOffGameJam2022Project\GameOffGameJam2022Project\GameOffGJProject\Library\ScriptAssemblies\Unity.2D.IK.Runtime.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Services.Core.Analytics">
-        <HintPath>E:\Unity Projects VOL 2\GameOffGameJam2022Project\GameOffGameJam2022Project\GameOffGJProject\Library\ScriptAssemblies\Unity.Services.Core.Analytics.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Burst">
         <HintPath>E:\Unity Projects VOL 2\GameOffGameJam2022Project\GameOffGameJam2022Project\GameOffGJProject\Library\ScriptAssemblies\Unity.Burst.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Services.Core.Environments">
-        <HintPath>E:\Unity Projects VOL 2\GameOffGameJam2022Project\GameOffGameJam2022Project\GameOffGJProject\Library\ScriptAssemblies\Unity.Services.Core.Environments.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Animation.Runtime">
         <HintPath>E:\Unity Projects VOL 2\GameOffGameJam2022Project\GameOffGameJam2022Project\GameOffGJProject\Library\ScriptAssemblies\Unity.2D.Animation.Runtime.dll</HintPath>
@@ -797,8 +811,21 @@
     <Reference Include="Unity.2D.SpriteShape.Runtime">
         <HintPath>E:\Unity Projects VOL 2\GameOffGameJam2022Project\GameOffGameJam2022Project\GameOffGJProject\Library\ScriptAssemblies\Unity.2D.SpriteShape.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Play.Publisher.Editor">
+        <HintPath>E:\Unity Projects VOL 2\GameOffGameJam2022Project\GameOffGameJam2022Project\GameOffGJProject\Library\ScriptAssemblies\Unity.Play.Publisher.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.EditorCoroutines.Editor">
+        <HintPath>E:\Unity Projects VOL 2\GameOffGameJam2022Project\GameOffGameJam2022Project\GameOffGJProject\Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.InternalAPIEditorBridgeDev.001">
+        <HintPath>E:\Unity Projects VOL 2\GameOffGameJam2022Project\GameOffGameJam2022Project\GameOffGJProject\Library\ScriptAssemblies\Unity.InternalAPIEditorBridgeDev.001.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Project.Runtime.csproj">
+      <Project>{87724559-26d6-15dc-210e-57e0f6fcf715}</Project>
+      <Name>Project.Runtime</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

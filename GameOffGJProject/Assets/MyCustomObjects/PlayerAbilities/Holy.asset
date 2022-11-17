@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b21fcc7ca98163443ba26264cdd7e5e7, type: 3}
   m_Name: Holy
   m_EditorClassIdentifier: 
-  abilityName: Holy Smite
+  abilityName: Holy Heal
+  abilityType: 1
   attackPoints: 24
   waterCost: 0
   fireCost: 0
