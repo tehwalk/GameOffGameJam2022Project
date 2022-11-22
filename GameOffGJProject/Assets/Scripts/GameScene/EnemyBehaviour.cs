@@ -46,5 +46,10 @@ public class EnemyBehaviour : MonoBehaviour
         return myAttack;
     }
 
+    public void MarkEnemyAsDefeated()
+    {
+        enemyPass.EnemyHasBeenWon();
+    }
+
 
 }

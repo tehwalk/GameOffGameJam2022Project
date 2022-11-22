@@ -69,6 +69,7 @@ public class BattleManager : MonoBehaviour
         MakeAction(attack, playerUnit, enemyUnit);
         if (enemyUnit.IsDead() == true)
         {
+            enemyBehaviour.MarkEnemyAsDefeated();
             StartCoroutine(TransitionToState(BattleState.Won, "You used " + attack.attackName));
         }
         else

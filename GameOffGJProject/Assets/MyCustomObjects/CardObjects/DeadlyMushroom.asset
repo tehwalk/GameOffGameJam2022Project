@@ -17,4 +17,4 @@ MonoBehaviour:
   elementType: 1
   elementNumberGiven: 3
   detail1: {fileID: -1797174535, guid: b2713bbf286ea3b4d8cf4478d348ee16, type: 3}
-  cardFace: {fileID: -509220665, guid: 91ece539279118a438c900dfb08582ed, type: 3}
+  cardFace: {fileID: 2013979153, guid: 71ad172f81917dc4c88b385499ba85c4, type: 3}

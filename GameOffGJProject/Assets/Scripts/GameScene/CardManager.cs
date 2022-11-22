@@ -17,7 +17,8 @@ public class CardManager : MonoBehaviour
     [HideInInspector] public List<Card> discarded = new List<Card>();
     [HideInInspector] public List<Card> selectedCards = new List<Card>();
     public RectTransform[] cardSlots;
-    [HideInInspector] public bool[] availableSlots;
+    
+    Dictionary<Transform, bool> availableSlots = new Dictionary<Transform, bool>();
 
     [Header("Text Properties")]
     public TextMeshProUGUI deckSizeText;
@@ -34,10 +35,14 @@ public class CardManager : MonoBehaviour
     }
     void Start()
     {
-        availableSlots = new bool[cardSlots.Length];
+        /*availableSlots = new bool[cardSlots.Length];
         for (int i = 0; i < availableSlots.Length; i++)
         {
             availableSlots[i] = true;
+        }*/
+        foreach(Transform t in cardSlots)
+        {
+            availableSlots.Add(t, true);
         }
 
     }
@@ -54,18 +59,18 @@ public class CardManager : MonoBehaviour
         if (deck.Count > 0)
         {
             Card randCard = deck[Random.Range(0, deck.Count)];
-            for (int i = 0; i < availableSlots.Length; i++)
+            foreach(Transform t in availableSlots.Keys)
             {
-                if (availableSlots[i] == true)
+                if (availableSlots[t] == true)
                 {
                     randCard.gameObject.SetActive(true);
                     randCard.hasBeenPlayed = false;
                     //randCard.gameObject.transform.position = Camera.main.WorldToScreenPoint(cardSlots[i].position);
-                    randCard.transform.SetParent(cardSlots[i]);
-                    randCard.GetComponent<RectTransform>().position = cardSlots[i].position;
+                    randCard.transform.SetParent(t);
+                    randCard.GetComponent<RectTransform>().position = t.position;
                     //randCard.gameObject.transform.rotation = cardSlots[i].rotation;
-                    randCard.handIndex = i;
-                    availableSlots[i] = false;
+                    //randCard.handIndex = i;
+                    availableSlots[t] = false;
                     deck.Remove(randCard);
                     return;
                 }
@@ -95,9 +100,11 @@ public class CardManager : MonoBehaviour
         foreach(Card c in selectedCards)
         {
             discarded.Add(c);
+            availableSlots[c.transform.parent] = true;
             c.transform.SetParent(null);
             c.gameObject.SetActive(false);
         }
+
     }
 
     private void OnDrawGizmos() {

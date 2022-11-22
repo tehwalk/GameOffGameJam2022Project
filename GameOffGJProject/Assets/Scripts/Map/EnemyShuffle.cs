@@ -4,23 +4,39 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 
+public enum EnemyStage { First, Second, Third };
 public class EnemyShuffle : MonoBehaviour
 {
-    [SerializeField] private Enemy[] enemies;
+    [SerializeField] Enemy[] availableEnemies;
+    public Enemy[] AvailableEnemies { get { return availableEnemies; } }
     [SerializeField] private Transform gfxSpawnPoint;
     [SerializeField] private TextMeshProUGUI enemyText;
+
     private Enemy _selectedEnemy;
     EnemyPass enemyPass;
+    EnemyStage enemyStage;
+
     private void Awake()
     {
         enemyPass = GameObject.FindGameObjectWithTag("EnemyPass").GetComponent<EnemyPass>();
     }
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        _selectedEnemy = enemies[Random.Range(0, enemies.Length)];
-        GameObject selectedEnemyGFX = Instantiate(_selectedEnemy.enemyGFX, gfxSpawnPoint.position, Quaternion.identity);
-        enemyText.text = _selectedEnemy.enemyName;
+        SetSelectedEnemy();
+    }
+
+    void SetSelectedEnemy()
+    {
+        foreach (Enemy e in availableEnemies)
+        {
+            if (enemyPass.DefeatedEnemies[e] == false)
+            {
+                _selectedEnemy = e;
+                GameObject selectedEnemyGFX = Instantiate(_selectedEnemy.enemyGFX, gfxSpawnPoint.position, Quaternion.identity);
+                enemyText.text = _selectedEnemy.enemyName;
+                return;
+            }
+        }
     }
 
     public void EnterGame()

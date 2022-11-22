@@ -13,7 +13,7 @@ public class Card : MonoBehaviour, IPointerClickHandler
     public CardFace myCardFace;
     private CardManager manager;
     private Player player;
-    TextMeshProUGUI cardTitle, cardDescription;
+    TextMeshProUGUI cardTitle;
     private void Start()
     {
         manager = CardManager.Instance;
@@ -23,12 +23,10 @@ public class Card : MonoBehaviour, IPointerClickHandler
 
     void SetCardAppearance()
     {
-        transform.GetChild(4).GetComponent<Image>().sprite = myCardFace.detail1;
-        transform.GetChild(5).GetComponent<Image>().sprite = myCardFace.cardFace;
-        cardTitle = transform.GetChild(6).GetComponent<TextMeshProUGUI>();
-        cardDescription = transform.GetChild(7).GetComponent<TextMeshProUGUI>();
+        transform.GetChild(3).GetComponent<Image>().sprite = myCardFace.detail1;
+        transform.GetChild(2).GetComponent<Image>().sprite = myCardFace.cardFace;
+        cardTitle = transform.GetChild(4).GetComponent<TextMeshProUGUI>();
         cardTitle.text = myCardFace.cardName;
-        cardDescription.text = myCardFace.cardDescription;
 
     }
 
