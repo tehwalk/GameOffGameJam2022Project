@@ -10,11 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 93f88a3942505ee4d8b05f37d1ae1c20, type: 3}
-  m_Name: Fiery Water Axe
+  m_Name: LoveAir
   m_EditorClassIdentifier: 
-  cardName: Fiery Water Axe
-  cardDescription: Will smite you
-  elementType: 0
-  elementNumberGiven: 5
-  detail1: {fileID: 1647528938, guid: b2713bbf286ea3b4d8cf4478d348ee16, type: 3}
-  cardFace: {fileID: -1275383271, guid: 71ad172f81917dc4c88b385499ba85c4, type: 3}
+  cardName: Love Is In The Air
+  elementType: 2
+  elementNumberGiven: 1
+  detail1: {fileID: -1893184096, guid: b2713bbf286ea3b4d8cf4478d348ee16, type: 3}
+  cardFace: {fileID: 1845901520, guid: 71ad172f81917dc4c88b385499ba85c4, type: 3}

@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Slash
   m_EditorClassIdentifier: 
   abilityName: Slash
+  abilityType: 0
   attackPoints: 15
-  waterCost: 3
+  waterCost: 2
   fireCost: 1
   earthCost: 0
   airCost: 0

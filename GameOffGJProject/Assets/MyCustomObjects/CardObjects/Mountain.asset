@@ -10,11 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 93f88a3942505ee4d8b05f37d1ae1c20, type: 3}
-  m_Name: DeadlyMushroom
+  m_Name: Mountain
   m_EditorClassIdentifier: 
-  cardName: Deadly Mushroom
-  cardDescription: Fiery Poison!!
-  elementType: 1
-  elementNumberGiven: 3
-  detail1: {fileID: -1797174535, guid: b2713bbf286ea3b4d8cf4478d348ee16, type: 3}
-  cardFace: {fileID: 2013979153, guid: 71ad172f81917dc4c88b385499ba85c4, type: 3}
+  cardName: Mountain
+  elementType: 3
+  elementNumberGiven: 1
+  detail1: {fileID: 1050973026, guid: b2713bbf286ea3b4d8cf4478d348ee16, type: 3}
+  cardFace: {fileID: 966156953, guid: 71ad172f81917dc4c88b385499ba85c4, type: 3}

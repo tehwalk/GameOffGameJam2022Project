@@ -48,6 +48,7 @@ public class EnemyBehaviour : MonoBehaviour
 
     public void MarkEnemyAsDefeated()
     {
+        if(myEnemyElements == placeholderEnemy) return; //debug
         enemyPass.EnemyHasBeenWon();
     }
 

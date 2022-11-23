@@ -7,13 +7,14 @@ using TMPro;
 
 public class Card : MonoBehaviour, IPointerClickHandler
 {
-    [HideInInspector] public bool hasBeenPlayed;
+    //[HideInInspector] public bool hasBeenPlayed;
     private bool hasBeenPlaced = false;
+    public bool HasBeenPlaced { get { return hasBeenPlaced; } set { hasBeenPlaced = value; } }
     [HideInInspector] public int handIndex;
     public CardFace myCardFace;
     private CardManager manager;
     private Player player;
-    TextMeshProUGUI cardTitle;
+    TextMeshProUGUI cardTitle, cardElementNumber;
     private void Start()
     {
         manager = CardManager.Instance;
@@ -27,25 +28,10 @@ public class Card : MonoBehaviour, IPointerClickHandler
         transform.GetChild(2).GetComponent<Image>().sprite = myCardFace.cardFace;
         cardTitle = transform.GetChild(4).GetComponent<TextMeshProUGUI>();
         cardTitle.text = myCardFace.cardName;
+        cardElementNumber = transform.GetChild(5).GetComponent<TextMeshProUGUI>();
+        cardElementNumber.text = myCardFace.elementNumberGiven.ToString();
 
     }
-
-   /* private void OnMouseDown()
-    {
-        hasBeenPlaced = !hasBeenPlaced;
-        if (hasBeenPlaced == true)
-        {
-            transform.position += Vector3.up * manager.playDisplacementDistance;
-            manager.selectedCards.Add(this);
-            player.AddElementsFromCard(this);
-        }
-        else
-        {
-            transform.position -= Vector3.up * manager.playDisplacementDistance;
-            manager.selectedCards.Remove(this);
-            player.RemoveElementsFromCard(this);
-        }
-    }*/
 
     public void OnPointerClick(PointerEventData eventData)
     {

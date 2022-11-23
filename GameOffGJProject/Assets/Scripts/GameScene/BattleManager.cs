@@ -16,6 +16,7 @@ public class BattleManager : MonoBehaviour
     public Unit playerUnit, enemyUnit;
     EnemyBehaviour enemyBehaviour;
     GameManager gameManager;
+    CardManager cardManager;
     public GameObject playerAttackPanel;
     //public Button drawButton, passButton;
     public TextMeshProUGUI dialogueText;
@@ -30,6 +31,7 @@ public class BattleManager : MonoBehaviour
     void Start()
     {
         gameManager = GameManager.Instance;
+        cardManager = CardManager.Instance;
         enemyBehaviour = enemyUnit.GetComponent<EnemyBehaviour>();
         state = BattleState.Start;
         playerAttackPanel.SetActive(false);
@@ -59,6 +61,7 @@ public class BattleManager : MonoBehaviour
 
     public void PlayerPass()
     {
+        cardManager.ShuffleSelected();
         StartCoroutine(TransitionToState(BattleState.EnemyTurn, "You passed your turn!"));
     }
 
