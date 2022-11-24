@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
         }
     }
     private CardManager cardManager;
+    private EnemyPass enemyPass;
     private int waterNumber, airNumber, fireNumber, earthNumber;
     public int WaterNumber { get { return waterNumber; } set {waterNumber = value;}}
     public int AirNumber { get { return airNumber; } set {airNumber = value;}}
@@ -25,6 +26,8 @@ public class Player : MonoBehaviour
     public TextMeshProUGUI airText; 
     public TextMeshProUGUI fireText;
     public TextMeshProUGUI earthText;
+    [Header("Player Abilities")]
+    [SerializeField] private AbilityButton[] abilities;
 
     private void Awake()
     {
@@ -35,6 +38,25 @@ public class Player : MonoBehaviour
     void Start()
     {
         cardManager = CardManager.Instance;
+        enemyPass = GameObject.FindGameObjectWithTag("EnemyPass").GetComponent<EnemyPass>();
+        InitializeAbilities();
+    }
+
+    void InitializeAbilities()
+    {
+        foreach(AbilityButton b in abilities)
+        {
+            b.gameObject.SetActive(false);
+        }
+        int level = 0;
+        foreach(Enemy e in enemyPass.DefeatedEnemies.Keys)
+        {
+           if(enemyPass.DefeatedEnemies[e] == true) level++;
+        }
+        for(int i=0; i<=level+1; i++)
+        {
+            abilities[i].gameObject.SetActive(true);
+        }
     }
 
     // Update is called once per frame

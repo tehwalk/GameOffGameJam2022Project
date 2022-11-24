@@ -104,7 +104,7 @@ public class BattleManager : MonoBehaviour
         switch (state)
         {
             case BattleState.PlayerTurn:
-                dialogueText.text = "Pick your attack";
+                dialogueText.text = "Draw cards and pick your attack";
                 break;
             case BattleState.EnemyTurn:
                 EnemyAttack(enemyBehaviour.EnemyRandomAttack());

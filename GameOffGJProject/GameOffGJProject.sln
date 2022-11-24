@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project.Runtime", "Project.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Runtime.External", "Runtime.External.csproj", "{f466c38a-d64a-1130-aaef-a75edbd5b95b}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plugins.BackgroundRecompiler.Editor", "Plugins.BackgroundRecompiler.Editor.csproj", "{67f70f6d-fe45-d96e-3703-a32e014d2fce}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -14,6 +16,8 @@ Global
 		{87724559-26d6-15dc-210e-57e0f6fcf715}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{f466c38a-d64a-1130-aaef-a75edbd5b95b}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{f466c38a-d64a-1130-aaef-a75edbd5b95b}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67f70f6d-fe45-d96e-3703-a32e014d2fce}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67f70f6d-fe45-d96e-3703-a32e014d2fce}.Debug|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

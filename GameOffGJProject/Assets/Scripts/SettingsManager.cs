@@ -21,8 +21,4 @@ public class SettingsManager : MonoBehaviour
         settingsPanel.gameObject.SetActive(false);
     }
 
-    public void QuitToMainMenu()
-    {
-        SceneManager.LoadScene((int)SceneIndex.MainMenuScene);
-    }
 }

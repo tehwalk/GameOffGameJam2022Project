@@ -32,11 +32,16 @@ public class EnemyShuffle : MonoBehaviour
             if (enemyPass.DefeatedEnemies[e] == false)
             {
                 _selectedEnemy = e;
-                GameObject selectedEnemyGFX = Instantiate(_selectedEnemy.enemyGFX, gfxSpawnPoint.position, Quaternion.identity);
-                enemyText.text = _selectedEnemy.enemyName;
+                MakeEnemyAppear();
                 return;
             }
         }
+    }
+
+    public void MakeEnemyAppear()
+    {
+        GameObject selectedEnemyGFX = Instantiate(_selectedEnemy.enemyGFX, gfxSpawnPoint.position, Quaternion.identity);
+        enemyText.text = _selectedEnemy.enemyName;
     }
 
     public void EnterGame()
