@@ -13,6 +13,7 @@ public class BattleManager : MonoBehaviour
         get { return instance; }
     }
     BattleState state;
+    public BattleState State { get { return state; } }
     public Unit playerUnit, enemyUnit;
     EnemyBehaviour enemyBehaviour;
     GameManager gameManager;

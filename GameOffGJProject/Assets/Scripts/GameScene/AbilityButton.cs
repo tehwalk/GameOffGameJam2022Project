@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+[RequireComponent(typeof(Hoverable))]
 public class AbilityButton : MonoBehaviour
 {
     Button myButton;
@@ -10,15 +11,23 @@ public class AbilityButton : MonoBehaviour
     Player player;
     BattleManager battleManager;
     CardManager cardManager;
+    Hoverable hoverable;
     // Start is called before the first frame update
     void Start()
     {
         player = Player.Instance;
         battleManager = BattleManager.Instance;
         cardManager = CardManager.Instance;
+        hoverable = GetComponent<Hoverable>();
         myButton = GetComponent<Button>();
         myButton.onClick.AddListener(delegate { UseAbility(); });
         DecorateButton();
+        SetUpHoverableMessage();
+    }
+
+    void SetUpHoverableMessage()
+    {
+        hoverable.DisplayedMessage = myAbility.abilityName + ": " + myAbility.attackPoints.ToString() + " points.";
     }
 
     void DecorateButton()
