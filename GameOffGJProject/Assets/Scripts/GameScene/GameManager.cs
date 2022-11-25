@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     private static GameManager _instance;
     public static GameManager Instance { get { return _instance; } }
     GameState gameState;
+    EnemyPass enemyPass;
     public GameState GameState { get { return gameState; } }
     [SerializeField] private GameObject pausePanel;
     [SerializeField] private GameObject gameOverPanel, wonOptions, lostOptions;
@@ -20,6 +21,7 @@ public class GameManager : MonoBehaviour
     }
     void Start()
     {
+        enemyPass = GameObject.FindGameObjectWithTag("EnemyPass").GetComponent<EnemyPass>();
         gameState = GameState.Playing;
         pausePanel.SetActive(false);
         gameOverPanel.SetActive(false);
@@ -61,7 +63,14 @@ public class GameManager : MonoBehaviour
     }
     public void QuitToMainMenu()
     {
-        SceneManager.LoadScene((int)SceneIndex.MainMenuScene);
+        if (enemyPass.AreAllWon() == false)
+        {
+            SceneManager.LoadScene((int)SceneIndex.MainMenuScene);
+        }
+        else 
+        {
+            SceneManager.LoadScene((int)SceneIndex.WinScene);
+        }
     }
 
     #endregion

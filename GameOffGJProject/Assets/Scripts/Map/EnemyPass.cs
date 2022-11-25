@@ -41,5 +41,14 @@ public class EnemyPass : MonoBehaviour
         defeatedEnemies[_selectedEnemy] = true;
     }
 
+    public bool AreAllWon()
+    {
+        foreach(Enemy e in defeatedEnemies.Keys)
+        {
+            if(defeatedEnemies[e] == false) return false;
+        }
+        return true;
+    }
+
 
 }

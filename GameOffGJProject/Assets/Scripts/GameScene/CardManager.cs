@@ -74,6 +74,10 @@ public class CardManager : MonoBehaviour
                 }
             }
         }
+        else 
+        {
+            Shuffle();
+        }
     }
 
     void UpdateDeckSizeText()
@@ -87,6 +91,7 @@ public class CardManager : MonoBehaviour
         {
             foreach (Card d in discarded)
             {
+                d.HasBeenPlaced = false;
                 deck.Add(d);
             }
             discarded.Clear();

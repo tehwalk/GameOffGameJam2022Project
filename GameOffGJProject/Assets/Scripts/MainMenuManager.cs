@@ -22,7 +22,7 @@ public class MainMenuManager : MonoBehaviour
         blackImage.gameObject.SetActive(true);
         LeanTween.alpha(blackImage.rectTransform, 1, fadeTime).setOnComplete(() =>
             {
-                SceneManager.LoadScene((int)SceneIndex.MapScene);
+                SceneManager.LoadScene((int)SceneIndex.IntroScene);
             });
     }
 
