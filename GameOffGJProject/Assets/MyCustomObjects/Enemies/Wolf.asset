@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb29c3861dc06c64dba1b640fce96f9f, type: 3}
+  m_Name: Wolf
+  m_EditorClassIdentifier: 
+  enemyName: Wolf In Sheep's Clothing
+  maxHealth: 150
+  enemyAbilities:
+  - {fileID: 11400000, guid: 217362b1d7cec944c9b94988150886c9, type: 2}
+  - {fileID: 11400000, guid: 98c66ce93f2d81746945996ea707671f, type: 2}
+  - {fileID: 11400000, guid: b7e0b0497679d174ca7e07a698339d76, type: 2}
+  - {fileID: 11400000, guid: 332adbc87ea5e19448902f0e12b8338c, type: 2}
+  enemyGFX: {fileID: 7959694459985521024, guid: bf78b6c3d12c45543a87b698080f24af, type: 3}
+  backgroundPrefab: {fileID: 2333084735572482506, guid: 5c5519da89e18b143aadf106cfdb23e5, type: 3}
+  musicPrefab: {fileID: 4468538827167713280, guid: 2c7e084d5bdb16a4ab989048423dde91, type: 3}

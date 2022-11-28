@@ -25,6 +25,7 @@ public class CardManager : MonoBehaviour
     [Header("Text Properties")]
     public TextMeshProUGUI deckSizeText;
     public TextMeshProUGUI discardedText;
+    [SerializeField] private TextMeshProUGUI dialogueText;
     // Start is called before the first frame update
     [Header("Universal Card Properties")]
     public float playDisplacementDistance = 3;
@@ -95,6 +96,7 @@ public class CardManager : MonoBehaviour
                 deck.Add(d);
             }
             discarded.Clear();
+            dialogueText.text = "The cards have been reshuffled!";
         }
     }
 
@@ -102,16 +104,23 @@ public class CardManager : MonoBehaviour
     {
         foreach (Transform t in cardSlots)
         {
-            if (availableSlots[t] == false)
+            if (availableSlots[t] == false) //if there are cards placed on the deck
             {
+                //if they are placed, take the points and discard them,
+                //else put them back in the deck
                 Card c = t.GetChild(0).GetComponent<Card>();
-                deck.Add(c);
+                //deck.Add(c);
                 c.HasBeenPlaced = false;
                 c.gameObject.SetActive(false);
-                if (selectedCards.Contains(c))
+                if (selectedCards.Contains(c)) //are they placed?
                 {
-                    player.RemoveElementsFromCard(c);
+                    //player.RemoveElementsFromCard(c);
                     selectedCards.Remove(c);
+                    discarded.Add(c);
+                }
+                else
+                {
+                    deck.Add(c);
                 }
                 availableSlots[t] = true;
                 c.transform.SetParent(null);

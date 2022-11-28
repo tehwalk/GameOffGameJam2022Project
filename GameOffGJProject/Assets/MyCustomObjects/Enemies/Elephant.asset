@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb29c3861dc06c64dba1b640fce96f9f, type: 3}
+  m_Name: Elephant
+  m_EditorClassIdentifier: 
+  enemyName: Pink Elephant
+  maxHealth: 100
+  enemyAbilities:
+  - {fileID: 11400000, guid: 92c69a3234e306346a9e4e4615599c6f, type: 2}
+  - {fileID: 11400000, guid: 0e921cbeac0e329488eed346e222c4d6, type: 2}
+  - {fileID: 11400000, guid: 1f925344ee054fe47a1b4167fa3462da, type: 2}
+  enemyGFX: {fileID: 8142201802457136204, guid: fe1e7469ac3ec9c43a225a03aae6101a, type: 3}
+  backgroundPrefab: {fileID: 6306693335425067729, guid: 036d361d2814e6c4da595d55c0f2912b, type: 3}
+  musicPrefab: {fileID: 7948603143487102050, guid: 0c431fce0ce04c94ab1e8818ea68d9bc, type: 3}

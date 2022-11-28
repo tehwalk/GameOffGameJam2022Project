@@ -36,7 +36,7 @@ public class BattleManager : MonoBehaviour
         enemyBehaviour = enemyUnit.GetComponent<EnemyBehaviour>();
         state = BattleState.Start;
         playerAttackPanel.SetActive(false);
-        StartCoroutine(TransitionToState(BattleState.PlayerTurn, "A wild " + enemyUnit.unitName + " has appeared!!"));
+        StartCoroutine(TransitionToState(BattleState.PlayerTurn, enemyUnit.unitName + " wants to battle!"));
     }
 
     private void Update()

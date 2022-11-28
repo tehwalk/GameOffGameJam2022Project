@@ -5,6 +5,8 @@ using TMPro;
 
 public class EnemyBehaviour : MonoBehaviour
 {
+    private static EnemyBehaviour instance;
+    public static EnemyBehaviour Instance { get { return instance; } }
     Unit myUnit;
     Enemy myEnemyElements;
     EnemyPass enemyPass;
@@ -12,11 +14,15 @@ public class EnemyBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        if (instance != null && instance != this) instance = null;
+        instance = this;
+
         myUnit = GetComponent<Unit>();
         SelectEnemy();
         // battleManager = BattleManager.Instance;
         myUnit.unitName = myEnemyElements.enemyName;
         myUnit.maxHealth = myEnemyElements.maxHealth;
+        InstantiatePrefabs();
     }
 
     void SelectEnemy()
@@ -30,10 +36,17 @@ public class EnemyBehaviour : MonoBehaviour
         myEnemyElements = enemyPass.GetSelectedEnemy();
     }
 
-    private void Start()
+    void InstantiatePrefabs()
     {
         GameObject enemyGFX = Instantiate(myEnemyElements.enemyGFX, transform.position, Quaternion.identity);
         enemyGFX.transform.SetParent(this.transform);
+        Instantiate(myEnemyElements.backgroundPrefab);
+        Instantiate(myEnemyElements.musicPrefab);
+    }
+
+    private void Start()
+    {
+
     }
 
     public AttackElement EnemyRandomAttack()
@@ -48,7 +61,7 @@ public class EnemyBehaviour : MonoBehaviour
 
     public void MarkEnemyAsDefeated()
     {
-        if(myEnemyElements == placeholderEnemy) return; //debug
+        if (myEnemyElements == placeholderEnemy) return; //debug
         enemyPass.EnemyHasBeenWon();
     }
 

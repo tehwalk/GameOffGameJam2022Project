@@ -9,6 +9,7 @@ public class AbilityButton : MonoBehaviour
     Button myButton;
     public Ability myAbility;
     Player player;
+    [SerializeField] PlayerAnimation playerAnimation;
     BattleManager battleManager;
     CardManager cardManager;
     Hoverable hoverable;
@@ -16,6 +17,7 @@ public class AbilityButton : MonoBehaviour
     void Start()
     {
         player = Player.Instance;
+        //playerAnimation = player.gameObject.GetComponentInChildren<PlayerAnimation>();
         battleManager = BattleManager.Instance;
         cardManager = CardManager.Instance;
         hoverable = GetComponent<Hoverable>();
@@ -72,6 +74,7 @@ public class AbilityButton : MonoBehaviour
         myAttack.abilityType = myAbility.abilityType;
         Debug.Log(myAbility.attackPoints + " in damage!");
         battleManager.PlayerAttack(myAttack);
+        playerAnimation.PlayAnim();
         player.AirNumber -= myAbility.airCost;
         player.EarthNumber -= myAbility.earthCost;
         player.FireNumber -= myAbility.fireCost;

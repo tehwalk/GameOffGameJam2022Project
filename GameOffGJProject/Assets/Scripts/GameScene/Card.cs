@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using TMPro;
 
+[ExecuteInEditMode]
 public class Card : MonoBehaviour, IPointerClickHandler
 {
     //[HideInInspector] public bool hasBeenPlayed;

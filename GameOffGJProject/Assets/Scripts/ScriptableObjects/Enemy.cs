@@ -9,4 +9,6 @@ public class Enemy : ScriptableObject
    public int maxHealth;
    public Ability[] enemyAbilities;
    public GameObject enemyGFX;
+   public GameObject backgroundPrefab;
+   public GameObject musicPrefab;
 }

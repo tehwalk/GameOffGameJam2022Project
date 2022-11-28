@@ -8,10 +8,12 @@ public class MainMenuManager : MonoBehaviour
 {
     [SerializeField] Image blackImage;
     [SerializeField] float fadeTime;
+    [SerializeField] GameObject creditsPanel;
     // Start is called before the first frame update
     void Start()
     {
-        LeanTween.alpha(blackImage.rectTransform, 0, fadeTime).setOnComplete(() =>
+        creditsPanel.SetActive(false);
+        LeanTween.alpha(blackImage.rectTransform, 0, fadeTime * Time.deltaTime).setOnComplete(() =>
         {
             blackImage.gameObject.SetActive(false);
         });
@@ -20,7 +22,7 @@ public class MainMenuManager : MonoBehaviour
     public void GoToMap()
     {
         blackImage.gameObject.SetActive(true);
-        LeanTween.alpha(blackImage.rectTransform, 1, fadeTime).setOnComplete(() =>
+        LeanTween.alpha(blackImage.rectTransform, 1, fadeTime * Time.deltaTime).setOnComplete(() =>
             {
                 SceneManager.LoadScene((int)SceneIndex.IntroScene);
             });
@@ -29,5 +31,15 @@ public class MainMenuManager : MonoBehaviour
     public void ExitGame()
     {
         Application.Quit();
+    }
+
+    public void OpenCreditsPanel()
+    {
+        creditsPanel.SetActive(true);
+    }
+
+    public void CloseCreditsPanel()
+    {
+        creditsPanel.SetActive(false);
     }
 }
