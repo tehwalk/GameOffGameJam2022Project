@@ -17,7 +17,7 @@ public class AbilityButton : MonoBehaviour
     void Start()
     {
         player = Player.Instance;
-        //playerAnimation = player.gameObject.GetComponentInChildren<PlayerAnimation>();
+       // playerAnimation = player.gameObject.GetComponentInChildren<PlayerAnimation>();
         battleManager = BattleManager.Instance;
         cardManager = CardManager.Instance;
         hoverable = GetComponent<Hoverable>();

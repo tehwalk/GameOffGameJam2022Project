@@ -36,7 +36,11 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\External\LeanTween\Editor\LeanTweenDocumentationEditor.cs" />
+     <Compile Include="Assets\DialogueEditor\Assets\Scripts\Editor\DialogueEditorWindow.cs" />
+     <Compile Include="Assets\DialogueEditor\Assets\Scripts\UI\Editor\ConversationManagerEditor.cs" />
+     <Compile Include="Assets\DialogueEditor\Assets\Scripts\Editor\DialogueEditorUtil.cs" />
+     <Compile Include="Assets\DialogueEditor\Assets\Scripts\Editor\NPCConversationEditor.cs" />
+     <Compile Include="Assets\DialogueEditor\Assets\Scripts\Editor\DialogueEditorNode.cs" />
     <Reference Include="UnityEngine">
         <HintPath>E:\Program Files\Unity\2021.3.12f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
@@ -295,6 +299,9 @@
     <Reference Include="UnityEditor.WindowsStandalone.Extensions">
         <HintPath>E:\Program Files\Unity\2021.3.12f1\Editor\Data\PlaybackEngines\WindowsStandaloneSupport\UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Plastic.Antlr3.Runtime">
+        <HintPath>E:\Unity Projects VOL 2\GameOffGameJam2022Project\GameOffGameJam2022Project\GameOffGJProject\Library\PackageCache\com.unity.collab-proxy@1.5.7\Lib\Editor\PlasticSCM\Unity.Plastic.Antlr3.Runtime.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Burst.Unsafe">
         <HintPath>E:\Unity Projects VOL 2\GameOffGameJam2022Project\GameOffGameJam2022Project\GameOffGJProject\Library\PackageCache\com.unity.burst@1.6.6\Unity.Burst.Unsafe.dll</HintPath>
     </Reference>
@@ -307,8 +314,17 @@
     <Reference Include="Unity.Burst.Cecil">
         <HintPath>E:\Unity Projects VOL 2\GameOffGameJam2022Project\GameOffGameJam2022Project\GameOffGJProject\Library\PackageCache\com.unity.burst@1.6.6\Unity.Burst.CodeGen\Unity.Burst.Cecil.dll</HintPath>
     </Reference>
+    <Reference Include="log4netPlastic">
+        <HintPath>E:\Unity Projects VOL 2\GameOffGameJam2022Project\GameOffGameJam2022Project\GameOffGJProject\Library\PackageCache\com.unity.collab-proxy@1.5.7\Lib\Editor\PlasticSCM\log4netPlastic.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Burst.Cecil.Rocks">
         <HintPath>E:\Unity Projects VOL 2\GameOffGameJam2022Project\GameOffGameJam2022Project\GameOffGJProject\Library\PackageCache\com.unity.burst@1.6.6\Unity.Burst.CodeGen\Unity.Burst.Cecil.Rocks.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+        <HintPath>E:\Unity Projects VOL 2\GameOffGameJam2022Project\GameOffGameJam2022Project\GameOffGJProject\Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2\Runtime\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="unityplastic">
+        <HintPath>E:\Unity Projects VOL 2\GameOffGameJam2022Project\GameOffGameJam2022Project\GameOffGJProject\Library\PackageCache\com.unity.collab-proxy@1.5.7\Lib\Editor\PlasticSCM\unityplastic.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
         <HintPath>E:\Unity Projects VOL 2\GameOffGameJam2022Project\GameOffGameJam2022Project\GameOffGJProject\Library\PackageCache\com.unity.ext.nunit@1.0.6\net35\unity-custom\nunit.framework.dll</HintPath>
@@ -742,20 +758,32 @@
     <Reference Include="UnityEditor.UI">
         <HintPath>E:\Unity Projects VOL 2\GameOffGameJam2022Project\GameOffGameJam2022Project\GameOffGJProject\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.PlasticSCM.Editor">
+        <HintPath>E:\Unity Projects VOL 2\GameOffGameJam2022Project\GameOffGameJam2022Project\GameOffGJProject\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Rider.Editor">
         <HintPath>E:\Unity Projects VOL 2\GameOffGameJam2022Project\GameOffGameJam2022Project\GameOffGJProject\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Play.Publisher.Editor">
+        <HintPath>E:\Unity Projects VOL 2\GameOffGameJam2022Project\GameOffGameJam2022Project\GameOffGJProject\Library\ScriptAssemblies\Unity.Play.Publisher.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+        <HintPath>E:\Unity Projects VOL 2\GameOffGameJam2022Project\GameOffGameJam2022Project\GameOffGJProject\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.InternalAPIEditorBridge.001">
         <HintPath>E:\Unity Projects VOL 2\GameOffGameJam2022Project\GameOffGameJam2022Project\GameOffGJProject\Library\ScriptAssemblies\Unity.InternalAPIEditorBridge.001.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.UI">
-        <HintPath>E:\Unity Projects VOL 2\GameOffGameJam2022Project\GameOffGameJam2022Project\GameOffGJProject\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
+    <Reference Include="Unity.EditorCoroutines.Editor">
+        <HintPath>E:\Unity Projects VOL 2\GameOffGameJam2022Project\GameOffGameJam2022Project\GameOffGJProject\Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Mathematics">
         <HintPath>E:\Unity Projects VOL 2\GameOffGameJam2022Project\GameOffGameJam2022Project\GameOffGJProject\Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.IK.Runtime">
         <HintPath>E:\Unity Projects VOL 2\GameOffGameJam2022Project\GameOffGameJam2022Project\GameOffGJProject\Library\ScriptAssemblies\Unity.2D.IK.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.InternalAPIEditorBridgeDev.001">
+        <HintPath>E:\Unity Projects VOL 2\GameOffGameJam2022Project\GameOffGameJam2022Project\GameOffGJProject\Library\ScriptAssemblies\Unity.InternalAPIEditorBridgeDev.001.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Burst">
         <HintPath>E:\Unity Projects VOL 2\GameOffGameJam2022Project\GameOffGameJam2022Project\GameOffGJProject\Library\ScriptAssemblies\Unity.Burst.dll</HintPath>
@@ -784,24 +812,23 @@
     <Reference Include="Unity.2D.SpriteShape.Runtime">
         <HintPath>E:\Unity Projects VOL 2\GameOffGameJam2022Project\GameOffGameJam2022Project\GameOffGJProject\Library\ScriptAssemblies\Unity.2D.SpriteShape.Runtime.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Play.Publisher.Editor">
-        <HintPath>E:\Unity Projects VOL 2\GameOffGameJam2022Project\GameOffGameJam2022Project\GameOffGJProject\Library\ScriptAssemblies\Unity.Play.Publisher.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.EditorCoroutines.Editor">
-        <HintPath>E:\Unity Projects VOL 2\GameOffGameJam2022Project\GameOffGameJam2022Project\GameOffGJProject\Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.InternalAPIEditorBridgeDev.001">
-        <HintPath>E:\Unity Projects VOL 2\GameOffGameJam2022Project\GameOffGameJam2022Project\GameOffGJProject\Library\ScriptAssemblies\Unity.InternalAPIEditorBridgeDev.001.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp.csproj">
       <Project>{6820c4cd-bdcd-5e66-c9b5-ae543c293dd8}</Project>
       <Name>Assembly-CSharp</Name>
     </ProjectReference>
+    <ProjectReference Include="Runtime.External.csproj">
+      <Project>{f466c38a-d64a-1130-aaef-a75edbd5b95b}</Project>
+      <Name>Runtime.External</Name>
+    </ProjectReference>
     <ProjectReference Include="Project.Runtime.csproj">
       <Project>{87724559-26d6-15dc-210e-57e0f6fcf715}</Project>
       <Name>Project.Runtime</Name>
+    </ProjectReference>
+    <ProjectReference Include="Plugins.BackgroundRecompiler.Editor.csproj">
+      <Project>{67f70f6d-fe45-d96e-3703-a32e014d2fce}</Project>
+      <Name>Plugins.BackgroundRecompiler.Editor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

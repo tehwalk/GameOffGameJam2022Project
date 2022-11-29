@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   abilityName: No Bark, All Bite
   abilityType: 0
-  attackPoints: 40
+  attackPoints: 35
   waterCost: 0
   fireCost: 0
   earthCost: 0

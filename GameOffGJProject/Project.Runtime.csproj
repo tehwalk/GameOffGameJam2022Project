@@ -38,6 +38,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\ScriptableObjects\CardFace.cs" />
      <Compile Include="Assets\Scripts\Map\EnemyShuffle.cs" />
+     <Compile Include="Assets\Scripts\TutorialManager.cs" />
      <Compile Include="Assets\Scripts\Map\PauseMenuManager.cs" />
      <Compile Include="Assets\Scripts\Map\EnemyPass.cs" />
      <Compile Include="Assets\Scripts\MainMenuManager.cs" />

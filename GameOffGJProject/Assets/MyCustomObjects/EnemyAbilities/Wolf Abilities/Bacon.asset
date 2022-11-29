@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   abilityName: Bring Home the Bacon
   abilityType: 1
-  attackPoints: 25
+  attackPoints: 20
   waterCost: 0
   fireCost: 0
   earthCost: 0

@@ -4434,6 +4434,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3130933227699692478, guid: 8854857909cd11240a1ffb9e77384915, type: 3}
   m_PrefabInstance: {fileID: 791528298}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &791528300 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3130933227699692477, guid: 8854857909cd11240a1ffb9e77384915, type: 3}
+  m_PrefabInstance: {fileID: 791528298}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b064ef866d545d4592cf73d390ff420, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &800586896
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6990,7 +7001,7 @@ PrefabInstance:
     - target: {fileID: 1871816076, guid: a9eb4266e3bbb91489ecf00718f7da54, type: 3}
       propertyPath: playerAnimation
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 791528300}
     - target: {fileID: 4063784912202628772, guid: a9eb4266e3bbb91489ecf00718f7da54, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -8596,7 +8607,7 @@ PrefabInstance:
     - target: {fileID: 1871816076, guid: a9eb4266e3bbb91489ecf00718f7da54, type: 3}
       propertyPath: playerAnimation
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 791528300}
     - target: {fileID: 4063784912202628772, guid: a9eb4266e3bbb91489ecf00718f7da54, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -10963,7 +10974,7 @@ PrefabInstance:
     - target: {fileID: 1871816076, guid: a9eb4266e3bbb91489ecf00718f7da54, type: 3}
       propertyPath: playerAnimation
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 791528300}
     - target: {fileID: 4063784912202628772, guid: a9eb4266e3bbb91489ecf00718f7da54, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -13042,7 +13053,7 @@ PrefabInstance:
     - target: {fileID: 1871816076, guid: a9eb4266e3bbb91489ecf00718f7da54, type: 3}
       propertyPath: playerAnimation
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 791528300}
     - target: {fileID: 4063784912202628772, guid: a9eb4266e3bbb91489ecf00718f7da54, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
