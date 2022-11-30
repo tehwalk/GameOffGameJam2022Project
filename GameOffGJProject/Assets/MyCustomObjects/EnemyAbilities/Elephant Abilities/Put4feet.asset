@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   abilityName: Put 4 Feet Down
   abilityType: 0
-  attackPoints: 30
+  attackPoints: 20
   waterCost: 0
   fireCost: 0
   earthCost: 0

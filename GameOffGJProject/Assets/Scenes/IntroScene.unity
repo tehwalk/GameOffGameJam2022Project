@@ -218,7 +218,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: ec1972dd466db5e46b3c8b585c1f9ddc, type: 2}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 80b506b4bf2e9494eb2c45e21f4141bc, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -412,7 +412,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1221450621}
+  - {fileID: 1307029299}
   - {fileID: 1938169237}
   - {fileID: 1728152532}
   m_Father: {fileID: 0}
@@ -435,7 +435,7 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!1 &1221450620
+--- !u!1 &1307029298
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -443,23 +443,23 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1221450621}
-  - component: {fileID: 1221450623}
-  - component: {fileID: 1221450622}
+  - component: {fileID: 1307029299}
+  - component: {fileID: 1307029301}
+  - component: {fileID: 1307029300}
   m_Layer: 5
-  m_Name: bard
+  m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &1221450621
+--- !u!224 &1307029299
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1221450620}
+  m_GameObject: {fileID: 1307029298}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -470,16 +470,16 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -8, y: -0.0000066646}
-  m_SizeDelta: {x: 142.1115, y: 142.1115}
+  m_AnchoredPosition: {x: -21, y: 0.0000076294}
+  m_SizeDelta: {x: 560, y: 850}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1221450622
+--- !u!114 &1307029300
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1221450620}
+  m_GameObject: {fileID: 1307029298}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
@@ -493,7 +493,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: bc097135f53586d4f84fe0d156b028d9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3c9056924ab214c42a411121af85cb44, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -503,13 +503,13 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!222 &1221450623
+--- !u!222 &1307029301
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1221450620}
+  m_GameObject: {fileID: 1307029298}
   m_CullTransparentMesh: 1
 --- !u!1 &1542530791
 GameObject:
@@ -683,7 +683,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -825,6 +825,22 @@ PrefabInstance:
     - target: {fileID: 931988933544193465, guid: a8afc974ca7351d49a261bb228c8721f, type: 3}
       propertyPath: m_Name
       value: StoryPanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 931988934349762043, guid: a8afc974ca7351d49a261bb228c8721f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1542530792}
+    - target: {fileID: 931988934349762043, guid: a8afc974ca7351d49a261bb228c8721f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GoToScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 7517945540415765121, guid: a8afc974ca7351d49a261bb228c8721f, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7517945540415765121, guid: a8afc974ca7351d49a261bb228c8721f, type: 3}
+      propertyPath: m_fontSize
+      value: 25.73
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8afc974ca7351d49a261bb228c8721f, type: 3}

@@ -9,8 +9,11 @@ public class EnemyBehaviour : MonoBehaviour
     public static EnemyBehaviour Instance { get { return instance; } }
     Unit myUnit;
     Enemy myEnemyElements;
+    public Enemy MyEnemyElements{get{return myEnemyElements;}}
     EnemyPass enemyPass;
+    DialogueManager dialogueManager;
     [SerializeField] Enemy placeholderEnemy;
+    [SerializeField] AudioSource mainAudioSource;
     // Start is called before the first frame update
     void Awake()
     {
@@ -23,6 +26,9 @@ public class EnemyBehaviour : MonoBehaviour
         myUnit.unitName = myEnemyElements.enemyName;
         myUnit.maxHealth = myEnemyElements.maxHealth;
         InstantiatePrefabs();
+        dialogueManager = DialogueManager.Instance;
+        dialogueManager.textPartsIntro = myEnemyElements.introDialogueParts;
+        dialogueManager.textPartsOutro = myEnemyElements.outroDialogueParts;
     }
 
     void SelectEnemy()
@@ -41,7 +47,10 @@ public class EnemyBehaviour : MonoBehaviour
         GameObject enemyGFX = Instantiate(myEnemyElements.enemyGFX, transform.position, Quaternion.identity);
         enemyGFX.transform.SetParent(this.transform);
         Instantiate(myEnemyElements.backgroundPrefab);
-        Instantiate(myEnemyElements.musicPrefab);
+        mainAudioSource.loop = true;
+        mainAudioSource.pitch = 1f;
+        mainAudioSource.clip = myEnemyElements.musicTrack;
+        mainAudioSource.Play();
     }
 
     private void Start()

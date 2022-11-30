@@ -2,6 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public struct DialogueNode{
+    public string dialogueName;
+    [TextArea(3,10)] public string dialogueText;
+};
+
+
 [CreateAssetMenu(fileName ="NewEnemy", menuName = "Enemy")]
 public class Enemy : ScriptableObject
 {
@@ -10,5 +17,7 @@ public class Enemy : ScriptableObject
    public Ability[] enemyAbilities;
    public GameObject enemyGFX;
    public GameObject backgroundPrefab;
-   public GameObject musicPrefab;
+   public AudioClip musicTrack;
+
+   public DialogueNode[] introDialogueParts, outroDialogueParts;
 }

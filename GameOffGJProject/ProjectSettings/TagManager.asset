@@ -7,6 +7,7 @@ TagManager:
   - EnemyPass
   - Message
   - Background
+  - Audio
   layers:
   - Default
   - TransparentFX

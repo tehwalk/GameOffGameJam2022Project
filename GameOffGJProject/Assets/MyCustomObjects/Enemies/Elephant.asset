@@ -20,4 +20,36 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1f925344ee054fe47a1b4167fa3462da, type: 2}
   enemyGFX: {fileID: 8142201802457136204, guid: fe1e7469ac3ec9c43a225a03aae6101a, type: 3}
   backgroundPrefab: {fileID: 6306693335425067729, guid: 036d361d2814e6c4da595d55c0f2912b, type: 3}
-  musicPrefab: {fileID: 7948603143487102050, guid: 0c431fce0ce04c94ab1e8818ea68d9bc, type: 3}
+  musicTrack: {fileID: 8300000, guid: 13199cf92dedcb346bab4e122b9cb59d, type: 3}
+  introDialogueParts:
+  - dialogueName: ELEPHANT
+    dialogueText: Oh! A human! Which wind blew you here?
+  - dialogueName: BARD
+    dialogueText: I - I'll be damned if I know, I just want to go home.
+  - dialogueName: ELEPHANT
+    dialogueText: Oh! Why you want to go home?
+  - dialogueName: BARD
+    dialogueText: 'Because I have a poem to write - '
+  - dialogueName: ELEPHANT
+    dialogueText: Why do you have to write a poem?
+  - dialogueName: BARD
+    dialogueText: Because I am a bard! That's what bards do!
+  - dialogueName: ELEPHANT
+    dialogueText: But you can't even write a good line! How are you a bard?
+  - dialogueName: BARD
+    dialogueText: I- You - you fat pink thing, I am a bard!
+  - dialogueName: ELEPHANT
+    dialogueText: Wow, what an eloquent answer. If you even are a bard, you sure
+      are the worst!
+  - dialogueName: BARD
+    dialogueText: Aaargh, enough! Let's fight already!
+  outroDialogueParts:
+  - dialogueName: ELEPHANT
+    dialogueText: Aw! You defeated me! Not fair!
+  - dialogueName: BARD
+    dialogueText: See? That's what you get for bad-mouthing me, you pink slob!
+  - dialogueName: ELEPHANT
+    dialogueText: Pfffft! Whatever! You still suck as a bard, though.
+  - dialogueName: BARD
+    dialogueText: You - no, I won't keep doing this, I am going home, and nor you
+      neither your friends will stop me!

@@ -21,4 +21,47 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 332adbc87ea5e19448902f0e12b8338c, type: 2}
   enemyGFX: {fileID: 7959694459985521024, guid: bf78b6c3d12c45543a87b698080f24af, type: 3}
   backgroundPrefab: {fileID: 2333084735572482506, guid: 5c5519da89e18b143aadf106cfdb23e5, type: 3}
-  musicPrefab: {fileID: 4468538827167713280, guid: 2c7e084d5bdb16a4ab989048423dde91, type: 3}
+  musicTrack: {fileID: 8300000, guid: d321713e6d6565549b96f84782c509ab, type: 3}
+  introDialogueParts:
+  - dialogueName: BARD
+    dialogueText: Alright, which other monstrosity do I have to face to get out of
+      this place?!
+  - dialogueName: WOLF
+    dialogueText: Monstrosity, you say? The only monstrosity I see is your pathetic
+      existence.
+  - dialogueName: BARD
+    dialogueText: Who - you said-
+  - dialogueName: WOLF
+    dialogueText: Yes, you wimp, I did! What are you gonna do about it?
+  - dialogueName: BARD
+    dialogueText: I will fight you, just like I did with the others!
+  - dialogueName: WOLF
+    dialogueText: You can fight anyone all you want, you will still remain a monstrous
+      failure. And you know it.
+  - dialogueName: BARD
+    dialogueText: That's not true!
+  - dialogueName: WOLF
+    dialogueText: Yes it is!
+  - dialogueName: BARD
+    dialogueText: No!!
+  outroDialogueParts:
+  - dialogueName: WOLF
+    dialogueText: 'Hehehe... you think that little truffle with me has achieved anything? '
+  - dialogueName: WOLF
+    dialogueText: You are a failure, born a failure, and will remain a failure.
+  - dialogueName: BARD
+    dialogueText: ...Sa-.... Say-
+  - dialogueName: WOLF
+    dialogueText: Sorry, I don't speak whiny. What did you say?
+  - dialogueName: BARD
+    dialogueText: Says the guy who's wrapped around sheep clothing! Who do you think
+      you're fooling? You look ridiculous!
+  - dialogueName: WOLF
+    dialogueText: ...Shut up!
+  - dialogueName: BARD
+    dialogueText: Not even sheep are dumb enough to be fooled by this disguise! You
+      are a pretentious, pathetic and stupid wolf! I am not listening to you!
+  - dialogueName: WOLF
+    dialogueText: I SAID SHUT UP!
+  - dialogueName: BARD
+    dialogueText: Huff and puff all you want, you know I am right!...

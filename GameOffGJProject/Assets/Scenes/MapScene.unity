@@ -460,7 +460,7 @@ GameObject:
   - component: {fileID: 447416920}
   m_Layer: 0
   m_Name: AudioManager
-  m_TagString: Untagged
+  m_TagString: Audio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -489,12 +489,12 @@ AudioSource:
   m_GameObject: {fileID: 447416918}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: ec1972dd466db5e46b3c8b585c1f9ddc, type: 2}
+  m_audioClip: {fileID: 8300000, guid: f94ade772a8d2754e9b39bd55df2d9e7, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -981,7 +981,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: a8443ac51ee09d140b402ce394d26085, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.735849, g: 0.440121, b: 0.668649, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

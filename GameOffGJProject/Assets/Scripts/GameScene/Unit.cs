@@ -55,7 +55,12 @@ public class Unit : MonoBehaviour
 
     public void Heal(int healPoints)
     {
-        if (Health < maxHealth) Health += healPoints;
+        if (Health < maxHealth) 
+        {
+            int required = maxHealth - Health;
+            if(required < healPoints) Health += required;
+            else Health += healPoints;
+        }
         unitHealthSlider.value = map(Health, 0, maxHealth, unitHealthSlider.minValue, unitHealthSlider.maxValue);
         unitHealthText.text = Health.ToString() + "/" + maxHealth.ToString();
         LeanTween.color(myGFX, Color.cyan, animTime * Time.deltaTime).setOnComplete(() =>

@@ -18,7 +18,8 @@ public class BattleManager : MonoBehaviour
     EnemyBehaviour enemyBehaviour;
     GameManager gameManager;
     CardManager cardManager;
-    public GameObject playerAttackPanel;
+    DialogueManager dialogueManager;
+    public GameObject battleHUD, playerAttackPanel;
     //public Button drawButton, passButton;
     public TextMeshProUGUI dialogueText;
     [SerializeField] private float intervalTime;
@@ -31,18 +32,28 @@ public class BattleManager : MonoBehaviour
     }
     void Start()
     {
+        battleHUD.SetActive(false);
         gameManager = GameManager.Instance;
         cardManager = CardManager.Instance;
+        dialogueManager = DialogueManager.Instance;
         enemyBehaviour = enemyUnit.GetComponent<EnemyBehaviour>();
         state = BattleState.Start;
         playerAttackPanel.SetActive(false);
-        StartCoroutine(TransitionToState(BattleState.PlayerTurn, enemyUnit.unitName + " wants to battle!"));
+        dialogueManager.ShowIntroDialogue();
+
     }
 
     private void Update()
     {
         switch (state)
         {
+            case BattleState.Start:
+                if (dialogueManager.myCoroutine == null)
+                {
+                    //Debug.Log("intro finished");
+                    SkipToBattle();
+                }
+                break;
             case BattleState.PlayerTurn:
                 playerAttackPanel.SetActive(true);
                 break;
@@ -50,9 +61,16 @@ public class BattleManager : MonoBehaviour
                 playerAttackPanel.SetActive(false);
                 break;
             case BattleState.Won:
+                battleHUD.SetActive(false);
                 playerAttackPanel.SetActive(false);
+                /*if (dialogueManager.myCoroutine == null)
+                {
+                    Debug.Log("outro finished");
+                    gameManager.GoToMap();
+                }*/
                 break;
             case BattleState.Lost:
+                battleHUD.SetActive(false);
                 playerAttackPanel.SetActive(false);
                 break;
             default:
@@ -97,7 +115,7 @@ public class BattleManager : MonoBehaviour
         }
     }
 
-    IEnumerator TransitionToState(BattleState desiredState, string message)
+    public IEnumerator TransitionToState(BattleState desiredState, string message)
     {
         dialogueText.text = message;
         yield return new WaitForSeconds(intervalTime);
@@ -112,9 +130,11 @@ public class BattleManager : MonoBehaviour
                 break;
             case BattleState.Won:
                 gameManager.GameOver(true);
+                // ShowOutroDialogue();
                 break;
             case BattleState.Lost:
                 gameManager.GameOver(false);
+                //ShowOutroDialogue();
                 break;
             default:
                 break;
@@ -136,6 +156,26 @@ public class BattleManager : MonoBehaviour
                 Debug.LogError("This type is not configured.");
                 break;
         }
+    }
+
+    public void SkipToBattle()
+    {
+        battleHUD.SetActive(true);
+        dialogueManager.HideDialoguePanel();
+        StartCoroutine(TransitionToState(BattleState.PlayerTurn, enemyUnit.unitName + " wants to battle!"));
+    }
+
+    void ShowOutroDialogue()
+    {
+        battleHUD.SetActive(false);
+        dialogueManager.ShowDialoguePanel();
+        dialogueManager.ShowOutroDialogue();
+    }
+
+    public void SkipToWin()
+    {
+        battleHUD.SetActive(false);
+        gameManager.GameOver(true);
     }
 
 }

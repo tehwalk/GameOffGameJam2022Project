@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   abilityName: Chew The Cud
   abilityType: 1
-  attackPoints: 30
+  attackPoints: 25
   waterCost: 0
   fireCost: 0
   earthCost: 0

@@ -19,4 +19,45 @@ MonoBehaviour:
   - {fileID: 11400000, guid: fdf11929c1453cc49bcf9a20855c366c, type: 2}
   enemyGFX: {fileID: 2531738884994986798, guid: bad2013b31a1f474d982b6048242e0f6, type: 3}
   backgroundPrefab: {fileID: 3794666521453147483, guid: 3c9d54d5a3c4c4140ad5af717490c8da, type: 3}
-  musicPrefab: {fileID: 3666361627708864314, guid: c45e76b4784ef6a4da7190c8cccf9e89, type: 3}
+  musicTrack: {fileID: 8300000, guid: 75539d9721fab78429127c108ab5c5dc, type: 3}
+  introDialogueParts:
+  - dialogueName: BARD
+    dialogueText: ...Hey! Where am I?
+  - dialogueName: FISH
+    dialogueText: Well, hello there friend!
+  - dialogueName: BARD
+    dialogueText: Wha - what's this? Who are you? What's this place?!
+  - dialogueName: FISH
+    dialogueText: Wow, you sure do seem like a fish out of water! Hehehe!
+  - dialogueName: BARD
+    dialogueText: ...cliche.
+  - dialogueName: FISH
+    dialogueText: But accurate, am I right?
+  - dialogueName: BARD
+    dialogueText: I will agree. Anyway, who are you and where are we? I hope we are
+      not far away from my house, I must return...
+  - dialogueName: FISH
+    dialogueText: Relax, relax... you will return soon enough.
+  - dialogueName: BARD
+    dialogueText: Oh thank goodness...
+  - dialogueName: FISH
+    dialogueText: When you defeat all of us, of course!
+  - dialogueName: BARD
+    dialogueText: Excuse me?! Fight? Why?
+  - dialogueName: FISH
+    dialogueText: Because... because, my man. Sorry, I don't make the rules.
+  - dialogueName: BARD
+    dialogueText: But that's ridiculous!
+  - dialogueName: FISH
+    dialogueText: 'Oh why? Can''t handle a little fishy? '
+  - dialogueName: BARD
+    dialogueText: Ugh fine, let's fight then...
+  outroDialogueParts:
+  - dialogueName: FISH
+    dialogueText: See? You made it!
+  - dialogueName: BARD
+    dialogueText: Thank goodness! Can I-
+  - dialogueName: FISH
+    dialogueText: Good luck with the others!!!
+  - dialogueName: BARD
+    dialogueText: Aw come on!!!
