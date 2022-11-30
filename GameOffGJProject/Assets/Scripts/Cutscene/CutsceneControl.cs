@@ -4,33 +4,23 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
-using DialogueEditor;
 
 public class CutsceneControl : MonoBehaviour
 {
-    public SceneIndex desiredScene;
-    [SerializeField] private float fadeTime;
-    [SerializeField] private Image blackImage;
-    NPCConversation convo;
-    // Start is called before the first frame update
-    private void OnEnable()
-    {
-        ConversationManager.OnConversationEnded += GoToScene;
-    }
 
-    private void OnDisable()
-    {
-        ConversationManager.OnConversationEnded -= GoToScene;
-    }
+    [TextArea(3, 10)] public string[] textParts;
+    public SceneIndex desiredScene;
+    [SerializeField] private float typeTime, fadeTime, gapMultiplier;
+    [SerializeField] private TextMeshProUGUI dialogueText;
+    [SerializeField] private Image blackImage;
+    // Start is called before the first frame update
     void Start()
     {
-        convo = GetComponent<NPCConversation>();
         LeanTween.alpha(blackImage.rectTransform, 0, fadeTime * Time.deltaTime).setOnComplete(
         () =>
         {
             blackImage.gameObject.SetActive(false);
-            ConversationManager.Instance.StartConversation(convo);
-
+            StartCoroutine(TypeText());
         }
     );
 
@@ -40,6 +30,23 @@ public class CutsceneControl : MonoBehaviour
     void Update()
     {
 
+    }
+
+    IEnumerator TypeText()
+    {
+        for (int i = 0; i < textParts.Length; i++)
+        {
+            //Debug.Log("write");
+            //yield return new WaitForSeconds(2f);
+            foreach (char c in textParts[i].ToCharArray())
+            {
+                dialogueText.text += c;
+                yield return new WaitForSeconds(typeTime);
+            }
+            yield return new WaitForSeconds(typeTime * gapMultiplier);
+            dialogueText.text = string.Empty;
+        }
+        GoToScene();
     }
 
     public void GoToScene()
@@ -53,6 +60,5 @@ public class CutsceneControl : MonoBehaviour
    );
 
     }
-
 
 }

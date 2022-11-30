@@ -38,6 +38,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         cardManager = CardManager.Instance;
+        if(!GameObject.FindGameObjectWithTag("EnemyPass")) return;
         enemyPass = GameObject.FindGameObjectWithTag("EnemyPass").GetComponent<EnemyPass>();
         InitializeAbilities();
     }
