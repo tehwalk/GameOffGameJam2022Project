@@ -9,7 +9,7 @@ Game's itch.io page: https://thewalkingtrash.itch.io/quel-cliche
 <h1>Credits</h1>
 <br/>
 Created by:
-TheWalkingTrash (https://thewalkingtrash.itch.io/)(programming, level design),
+TheWalkingTrash (https://thewalkingtrash.itch.io/) (programming, level design),
 <br/>
 Simonian (https://simonian.itch.io/) (character art, game design)
 <br/>
